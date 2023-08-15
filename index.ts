@@ -189,6 +189,10 @@ const server = createServer((req, res) => {
         try {
             const appRes = await handleReq(req, body)
             res.statusCode = appRes.attrs.status
+            const headers = appRes.attrs.headers || {}
+            for (const headerName in headers) {
+                res.setHeader(headerName, headers[headerName])
+            }
             res.end(appRes.body)
         }
         catch (e) {
