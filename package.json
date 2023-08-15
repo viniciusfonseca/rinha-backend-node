@@ -1,0 +1,18 @@
+{
+  "name": "rinha-backend-bun",
+  "scripts": {
+    "build": "esbuild --platform=node --minify --bundle index.ts --outdir=./dist"
+  },
+  "devDependencies": {
+    "@types/pg-pool": "^2.0.3",
+    "esbuild": "^0.19.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "pg-pool": "^3.6.1",
+    "redis": "^4.6.7",
+    "sql-escape-string": "^1.1.0"
+  }
+}
