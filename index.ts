@@ -131,10 +131,7 @@ async function contaPessoas() {
     return new Response(rows[0].COUNT, { status: 200 })
 }
 
-const sleep = (duration: number) => new Promise(resolve => setTimeout(resolve, duration))
-
 async function batchInsert() {
-    await sleep(5000)
     if (queue.length === 0) { return }
     const apelidos = new Set()
     let input_sql = sql`INSERT INTO PESSOAS (ID, APELIDO, NOME, NASCIMENTO, STACK) VALUES `
